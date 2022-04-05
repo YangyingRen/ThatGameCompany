@@ -6,6 +6,7 @@ public class PuzzleSolved : MonoBehaviour
 {
     public Material Active;
     public Animator anim;
+    public int Goal;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class PuzzleSolved : MonoBehaviour
     
     int len=transform.childCount;
     for(int i=0;i<len;i++){
-       if( GameObject.Find("GameManager").GetComponent<GameManager>().Point==3){
+       if( GameObject.Find("GameManager").GetComponent<GameManager>().Point==Goal){
            anim.SetBool("Rise",true);
            GameObject.Find("GameManager").GetComponent<GameManager>().Point=0;
 
