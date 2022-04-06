@@ -21,10 +21,13 @@ public class PuzzleSolved : MonoBehaviour
     for(int i=0;i<len;i++){
        if( GameObject.Find("GameManager").GetComponent<GameManager>().Point==Goal){
            anim.SetBool("Rise",true);
-           GameObject.Find("GameManager").GetComponent<GameManager>().Point=0;
-
        }
     }
         
+    }
+
+    public void ResetGoal(){
+            GameObject.Find("GameManager").GetComponent<GameManager>().Point=0;
+ 
     }
 }

@@ -30,12 +30,13 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter(Collider col){
         if(col.tag=="Player"){
+            GameObject.Find("GameManager").GetComponent<GameManager>().Point+=1;
             transform.parent=DoneGoal;
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             gameObject.GetComponent<SphereCollider>().enabled=false;
             gameObject.GetComponent<MeshRenderer>().enabled=false;
             gameObject.GetComponent<AudioSource>().Play();
-            GameObject.Find("GameManager").GetComponent<GameManager>().Point+=1;
+           
         }
     }
 }
