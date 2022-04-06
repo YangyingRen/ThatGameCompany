@@ -23,7 +23,7 @@ public class Goal : MonoBehaviour
     {
     m_Volume.profile.TryGet<ColorAdjustments>(out var m_Saturation);
     Child=DoneGoal.childCount;
-    m_Saturation.saturation.value=-100+DoneGoal.childCount*10;
+    m_Saturation.saturation.value=-100+DoneGoal.childCount*15;
     
         
     }
