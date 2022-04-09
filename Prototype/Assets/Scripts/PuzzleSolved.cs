@@ -30,4 +30,7 @@ public class PuzzleSolved : MonoBehaviour
             GameObject.Find("GameManager").GetComponent<GameManager>().Point=0;
  
     }
+    public void PlaySound(){
+        GetComponent<AudioSource>().Play();
+    }
 }
