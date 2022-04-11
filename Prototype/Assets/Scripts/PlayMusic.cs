@@ -16,24 +16,27 @@ public class PlayMusic : MonoBehaviour
     {
         if(StopPlaying==true){
            float M_volume=GetComponent<AudioSource>().volume;
-           float New_volume=M_volume-0.001f;
+           float New_volume=M_volume-0.005f;
            GetComponent<AudioSource>().volume=Mathf.Lerp(M_volume,New_volume,1);
            if(M_volume==0){
-           GetComponent<AudioSource>().Pause();
+           GetComponent<AudioSource>().Stop();
            }
 
         }
-        //else{
-            //GetComponent<AudioSource>().Play();
-            //GetComponent<AudioSource>().volume=1;
+        else{
+           float M_volume=GetComponent<AudioSource>().volume;
+           float New_volume=M_volume+0.005f;
+           GetComponent<AudioSource>().volume=Mathf.Lerp(M_volume,New_volume,1);
+        }
+            
             
 
-        //}
         
     }
-    private void OnTriggerStay(Collider col){
+    private void OnTriggerEnter(Collider col){
         if(col.tag=="Player"){
             StopPlaying=false;
+            GetComponent<AudioSource>().Play();
         }    
     }
     private void OnTriggerExit(Collider col){
